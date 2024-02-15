@@ -1,0 +1,197 @@
+
+<!--Nicolás Toscano (220264) Juan Manuel Mera (273527)-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Sistema de Ofertas</title>
+		<meta charset="utf-8">
+		<link rel ="stylesheet" href="css/Estilos.css">
+		<script src="js/clase.js"></script>
+		<script src="js/funciones.js"></script>
+		<meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+		<header>
+			<h1>Sistema de Ofertas</h1>
+		</header>
+		<nav>
+			<a id="link1" href="#idDatos">Datos</a>
+			<a id="link2" href ="#idConsultas">Consultas</a>
+			<a id="link3" href ="#idEquipo">Conozca al Equipo</a>
+		</nav>
+		<section>
+			<h2 id="idDatos">Datos</h2>
+		<article>	
+			<h2>Alta de Empleado</h2>
+			<form id = "formEmpleado">
+				<label for="GET-nombre">Nombre</label>
+				<input type="text" id="GET-nombre" name="nombre" required>
+				<br>
+				<label for="GET-cedula">Cedula</label>
+				<input type="number" id="GET-cedula" min = "0" name="cedula" required>
+				<br>
+				<label for ="idDepart">Departamento</label>	
+				<select id= "idDepart"  name="Departamento">
+					<option value="Artigas" selected>Artigas</option>
+					<option value="Canelones">Canelones</option>
+					<option value="Cerro Largo">Cerro Largo</option>
+					<option value="Colonia">Colonia</option>
+					<option value="Durazno">Durazno</option>
+					<option value="Flores">Flores</option>
+					<option value="Florida">Florida</option>
+					<option value="Lavalleja">Lavalleja</option>
+					<option value="Maldonado">Maldonado</option>
+					<option value="Montevideo">Montevideo</option>
+					<option value="Paysandu">Paysandú</option>
+					<option value="Rio Negro">Rio Negro</option>
+					<option value="Rivera">Rivera</option>
+					<option value="Rocha">Rocha</option>
+					<option value="Salto">Salto</option>
+					<option value="San Jose">San José</option>
+					<option value="Soriano">Soriano</option>
+					<option value="Tacuarembo">Tacuarembó</option>
+					<option value="Treinta y Tres">Treinta y Tres</option>
+				</select>
+				<br>
+				<label for="Get-edad">Edad</label>
+				<input id="Get-edad" type="number" min ="18" max ="99" name="edad" required>
+			</form>
+			<br>
+			<button type="button" id="agregarEmp">Agregar</button>
+		</article>	
+		
+		<article>
+			<h2>Alta de Rubro</h2>
+			<form id="formRubro">
+				<label for="idNombre">Nombre</label>
+				<input id="idNombre" type="text" name="nombre" required>
+				<br>
+				<label for="GET-descripcion">Descripcion</label>
+				<input id="GET-descripcion" type="text" name="descripcion" required>
+			</form>
+			<br>
+			<button type="button" id = "agregarRub">Agregar</button>
+		</article>
+	
+		<article>
+			<h2>Alta de Oferta</h2>
+			<form id="formOferta">
+				<label for ="idEmpleado">Empleado</label>	
+				<select id= "idEmpleado" name="Empleado">
+					<option value="sinDatos">Sin datos</option>
+				</select>
+				<br>
+				<label for ="Rubro">Rubro</label>	
+				<select id= "Rubro" name="Rubros">
+					<option value="sinDatos">Sin datos</option>
+				</select>
+				<br>	
+				<label for="GET-detalle">Detalle</label>
+				<input id="GET-detalle" type="text" name="detalle" required>
+				<br>
+				<label for="GET-precio">Precio</label>
+				<input id="GET-precio" type="number" min = "0" name="precio" required>
+			</form>
+			<br>
+			<button type="button" id = "agregarOf">Agregar</button>
+		</article>	
+		
+		<article>	
+			<h2>Baja de Oferta</h2>
+			<form id="formBaja">
+				<label for ="idOferta">Oferta</label>	
+				<select id= "idOferta" name="Oferta">
+					<option value ="sinDatos">Sin datos</option>
+				</select>
+			</form>
+			<br>
+			<button type="button" id = "borrarOf">Borrar</button>
+		</article>	
+		</section>
+
+		<section>	
+			<h2 id="idConsultas">Consultas</h2>
+		<article>	
+			
+			<h2>Ofertas de un rubro</h2>
+			<label for = "idRubro">Rubro</label>
+			<select name = "Rubro" id = "idRubro">
+				<option value = "sinDatos" selected>Sin datos</option>
+			</select>
+			<button type="button" id = "idBotonConsultar">Consultar</button>
+			<br>
+			<label for = "pCreciente">Orden:</label>
+			<br>
+			<input type="radio" id="pCreciente" name="orden" value="precio" checked>
+			<label for = "pCreciente" id="texto2">precio creciente</label>
+			<br>
+			<input type="radio" id="nomDepCreciente" name="orden" value="departamento">
+			<label for = "nomDepCreciente" id="texto">nombre departamento creciente</label>
+			<br>
+			<br>
+			<table id = "idTablaConsulta">
+				<caption><strong>Rubro: Sin Datos Promedio: Sin Datos</strong></caption>
+				<thead>
+					<tr>
+						<th>Nombre Empleado</th>
+						<th>Departamento</th>
+						<th>Detalle de la oferta</th>
+						<th>Precio</th>
+						<th>Tipo</th>
+					</tr>
+				</thead>
+			</table>
+		</article>
+		<article>
+			<h2>Rubros con Máxima Cantidad de Ofertas</h2>
+			<ul id="listaRubros">
+				<li>Sin datos</li>
+			</ul>
+		</article>
+		<article>
+			<h2>Rubros sin Ofertas</h2>
+			<ul id="listaRubros2">
+				<li>Sin datos</li>
+			</ul>
+		</article>
+		<article>		
+			<h2>Tabla de Empleados</h2>
+			<table id ="tablaEmpleados">
+				<thead>
+					<tr>
+						<th>Nombre Empleado</th>
+						<th>Cédula</th>
+						<th>Departamento</th>
+						<th>Edad</th>
+						<th>Cantidad de ofertas</th>
+					</tr>
+				</thead>
+			</table>
+		</article>
+		</section>
+		
+		<section>
+			<br>
+			<h2 id="idEquipo">Conozca al Equipo</h2>
+		<article>	
+			<h2>Primer integrante</h2>
+				<img src="img/Nico.jpg" id="idImagen1" alt="imagen">
+				<a href="https://www.ort.edu.uy/" target="_blank"><img src="img/linkedin.jpg" id="idLinkedin1" alt="imagen"></a>
+				<p id="idParrafo1">Nicolás Toscano (220264)</p>
+			<br>
+		</article>
+		<article>
+			<h2>Segundo integrante</h2>
+				<img src="img/Juan.jpg" id="idImagen2" alt="imagen">
+				<a href="https://www.ort.edu.uy/" target="_blank"><img src="img/linkedin.jpg" id="idLinkedin2" alt="imagen"></a>
+				<p id="idParrafo2">Juan Manuel Mera (273527)</p>
+			<br>
+			<br>
+		</article>
+		</section>
+		
+		<footer>
+			<p>Programación 1 - Obligatorio 1er. semestre 2022 - Universidad ORT Uruguay</p>
+		</footer>
+	</body>
+</html>

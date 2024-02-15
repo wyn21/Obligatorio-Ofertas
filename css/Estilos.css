@@ -1,0 +1,39 @@
+
+/*Nicolás Toscano (220264) Juan Manuel Mera (273527)*/
+html{background-color:gray;}
+body {color: gray;}
+h2 {color: #6F6D6D;}
+#idDatos{background-color:black;
+color:white;}
+#idConsultas{background-color:black;
+color:white;}
+#idEquipo{background-color:black;
+color:white;}
+nav{background-color:#b0aeae;
+color:black;}
+#link2,#link3{margin: 30px;
+color:white;}
+#link1{color:white; margin-right:30px;}
+header {color:white; text-align:center;}
+section {margin: 2px 50px;; outline:2px solid black;
+padding-left: 5%; padding-top: 0.5%; background-color:white; padding-bottom:1%;} 
+footer{background-color:#b0aeae; color:white; text-align:center;margin-top:-15px;margin-bottom:-5px;}
+article{padding-left:3%;}
+table,th,td{border: 1px solid;}
+#listaRubros{color: blue;}
+#listaRubros2{color:red;}
+img {border-radius:50%; height:50px;margin:10px;}
+#idParrafo1{float: right; padding-right:78%; padding-top:10px}
+#idParrafo2{float: right; padding-right:77%; padding-top:10px}
+button {width: 200px;}
+input{display: inline-block; width: 200px;}
+label{display: inline-block; width: 100px;}
+select{width: 208px;}
+#texto{display:inline;}
+#texto2{display:inline;}
+
+@media screen and (max-width:500px){
+	section{background-color: blue; font-size:80%}
+}
+
+	
